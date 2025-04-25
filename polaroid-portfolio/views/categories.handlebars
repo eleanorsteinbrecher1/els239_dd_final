@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Manage Categories</h2>
+  <a href="/category/create" class="btn btn-success">New Category</a>
+</div>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each categories}}
+    <tr>
+      <td>{{inc @index}}</td>
+      <td>{{this.name}}</td>
+      <td>
+        <a href="/category/edit/{{this.id}}" class="btn btn-sm btn-outline-light">
+          Edit
+        </a>
+        <a href="/category/delete/{{this.id}}"
+           class="btn btn-sm btn-outline-danger ms-2"
+           onclick="return confirm('Delete “{{this.name}}”?');">
+          Delete
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

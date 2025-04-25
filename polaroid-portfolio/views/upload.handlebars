@@ -1,0 +1,26 @@
+<h2>Upload a New Photo</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input name="title" type="text" class="form-control" id="title" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select name="category" id="category" class="form-select" required>
+      <option value="">Select a category</option>
+      {{#each categories}}
+        <option value="{{this.id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="photo" class="form-label">Photo File</label>
+    <input name="photo" type="file" class="form-control" id="photo"
+           accept="image/*" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Upload</button>
+</form>

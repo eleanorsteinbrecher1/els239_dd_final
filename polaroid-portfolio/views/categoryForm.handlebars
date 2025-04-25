@@ -1,0 +1,24 @@
+<h2>{{#if category}}Edit{{else}}New{{/if}} Category</h2>
+
+<form action="/category/{{#if category}}edit{{else}}create{{/if}}" method="post">
+  {{#if category}}
+    <input type="hidden" name="id" value="{{category.id}}">
+  {{/if}}
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Category Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="e.g. Nature"
+      value="{{#if category}}{{category.name}}{{/if}}"
+      required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    {{#if category}}Update{{else}}Create{{/if}}
+  </button>
+  <a href="/categories" class="btn btn-secondary ms-2">Cancel</a>
+</form>

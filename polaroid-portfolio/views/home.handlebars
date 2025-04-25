@@ -1,0 +1,21 @@
+{{!-- views/home.handlebars --}}
+<div class="page-header">
+  <h1>Welcome to My Polaroid Wall</h1>
+  <p>
+    Here you can upload fun photos and see them as a virtual Polaroid wall!
+    Add as many as you like, then edit or delete at any time.
+  </p>
+  <p>
+    Browse by category—or create your own if you don’t see the one you want.
+  </p>
+</div>
+
+<div class="polaroid-container">
+  {{#each photos}}
+    {{> polaroid photo=this}}
+  {{/each}}
+
+  {{#unless photos.length}}
+    <p class="text-muted">No photos yet. Upload one to get started!</p>
+  {{/unless}}
+</div>

@@ -1,0 +1,10 @@
+<div class="polaroid">
+  {{#if photo.filepath}}
+    <img src="{{photo.filepath}}" alt="{{photo.title}}">
+  {{else}}
+    <div class="film"></div>
+  {{/if}}
+  {{#if photo.title}}
+    <div class="caption">{{photo.title}}</div>
+  {{/if}}
+</div>

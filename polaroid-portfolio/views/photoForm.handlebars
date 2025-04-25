@@ -1,0 +1,24 @@
+<h2>Edit Photo</h2>
+<form action="/photo/edit" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="{{photo.id}}" />
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input name="title" type="text" class="form-control" value="{{photo.title}}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Category</label>
+    <select name="category" class="form-select" required>
+      {{#each categories}}
+        <option value="{{this.id}}" {{#if (eq this.id ../photo.CategoryId)}}selected{{/if}}>
+          {{this.name}}
+        </option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Replace file (optional)</label>
+    <input name="photo" type="file" class="form-control" accept="image/*">
+  </div>
+  <button class="btn btn-primary">Save</button>
+  <a href="/photos" class="btn btn-secondary ms-2">Cancel</a>
+</form>

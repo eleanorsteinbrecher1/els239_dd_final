@@ -1,0 +1,11 @@
+<h2 class="mb-3">Category: {{category.name}}</h2>
+
+<div class="polaroid-container">
+  {{#each photos}}
+    {{> polaroid photo=this}}
+  {{/each}}
+
+  {{#unless photos.length}}
+    <p class="text-muted">No photos in this category yet.</p>
+  {{/unless}}
+</div>

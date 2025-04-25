@@ -1,0 +1,191 @@
+/* Base resets & typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: #eee;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #fff;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* Navbar */
+.navbar {
+  padding: 1rem 2rem !important;
+  background-color: rgba(0,0,0,0.85) !important;
+  margin-bottom: 2rem;
+  border: none;
+}
+.navbar .navbar-brand {
+  font-size: 1.4rem;
+  color: #fff !important;
+}
+.navbar .nav-link {
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  color: #ccc !important;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+.navbar .nav-link:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Hero / page header */
+.page-header {
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  text-align: center;
+  color: #ddd;
+  line-height: 1.5;
+}
+.page-header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.page-header p {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Polaroid wall (stacked, overlapping) */
+.polaroid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -20px;
+}
+.polaroid {
+  position: relative;
+  background: #fafafa;
+  padding: 8px 8px 16px;
+  margin: 20px;
+  width: 200px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.polaroid:nth-child(4n+1) {
+  transform: rotate(-8deg) translate(-10px,-10px);
+  z-index: 4;
+}
+.polaroid:nth-child(4n+2) {
+  transform: rotate(5deg) translate(15px,5px);
+  z-index: 3;
+}
+.polaroid:nth-child(4n+3) {
+  transform: rotate(-4deg) translate(-15px,15px);
+  z-index: 2;
+}
+.polaroid:nth-child(4n+4) {
+  transform: rotate(7deg) translate(10px,-5px);
+  z-index: 1;
+}
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.1);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.polaroid .caption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+/* Tables */
+.table {
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.table thead {
+  background-color: #444;
+}
+.table th,
+.table td {
+  color: #eee !important;
+  vertical-align: middle !important;
+}
+.table th {
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 4px;
+  font-weight: 500;
+}
+.btn-primary {
+  background-color: #d84315;
+  border-color: #d84315;
+}
+.btn-primary:hover {
+  background-color: #bf360c;
+  border-color: #bf360c;
+}
+.btn-success {
+  background-color: #558b2f;
+  border-color: #558b2f;
+}
+.btn-success:hover {
+  background-color: #33691e;
+  border-color: #33691e;
+}
+
+/* Forms */
+.form-label {
+  color: #eee;
+  font-weight: 600;
+}
+.form-control,
+.form-select {
+  background: #444;
+  color: #eee;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+.form-control:focus,
+.form-select:focus {
+  background: #555;
+  border-color: #777;
+  color: #fff;
+}
+
+/* Empty states */
+.text-muted {
+  color: #ccc !important;
+  text-align: center;
+  margin: 2rem 0;
+}

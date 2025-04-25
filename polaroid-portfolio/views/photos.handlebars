@@ -1,0 +1,43 @@
+{{!-- views/photos.handlebars --}}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Manage Photos</h2>
+  <a href="/upload" class="btn btn-success">New Photo</a>
+</div>
+
+<table class="table table-dark table-striped align-middle">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Preview</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each photos}}
+    <tr>
+      <td>{{inc @index}}</td>
+      <td>
+        <img src="{{this.filepath}}"
+             alt="{{this.title}}"
+             style="height:60px; object-fit:cover; border-radius:4px;" />
+      </td>
+      <td>{{this.title}}</td>
+      <td>{{this.Category.name}}</td>
+      <td>
+        <a href="/photo/edit/{{this.id}}"
+           class="btn btn-sm btn-outline-light">
+          Edit
+        </a>
+        <a href="/photo/delete/{{this.id}}"
+           class="btn btn-sm btn-outline-danger ms-2"
+           onclick="return confirm('Delete “{{this.title}}”?');">
+          Delete
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
